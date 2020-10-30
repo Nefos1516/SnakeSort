@@ -8,9 +8,8 @@ main() {
 	
 	srand(time(NULL));
 	
-	int a[100][100];
+	int **a;
 	int m, n;
-	int h[10000];
 	
 	printf("Введите количество строк массива:");
 	scanf("%d", &n);
@@ -20,7 +19,10 @@ main() {
 	printf("Введите количество столбцов массива:");
 	scanf("%d", &m);
 	
+	a = (int**)malloc(n*sizeof(int*));
+	
 	for (int i = 0; i < n ; i++) {
+		a[i] = (int*)malloc(m*sizeof(int));
 		for (int j = 0; j < m; j++) {
 			a[i][j] = rand() % 100 - 50;
 		}
@@ -33,14 +35,14 @@ main() {
 		}
 		printf("\n");
 	}
+	int *h;
+	h = (int*)malloc(n*m*sizeof(int));
 	
 	int k = 0;
-	while (k < n * m) {
-		for (int i = 0; i < n; i++){
-			for (int j = 0; j < m; j++) {
-				h[k]=a[i][j];
-				k++;
-			}
+	for (int i = 0; i < n ; i++) {
+		for (int j = 0; j < m; j++) {
+			h[k]=a[i][j];
+			k++;
 		}
 	}
 	
