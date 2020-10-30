@@ -11,12 +11,12 @@ main() {
 	int **a;//pointer to pointer to line of elements in two-dimensional array
 	int m, n;
 	
-	printf("Введите количество строк массива:");
-	scanf("%d", &n);//insput number of lines here
+	printf("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕРє РјР°СЃСЃРёРІР°:");
+	scanf("%d", &n);//input number of lines here
 	
 	printf("\n");
 	
-	printf("Введите количество столбцов массива:");
+	printf("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚РѕР»Р±С†РѕРІ РјР°СЃСЃРёРІР°:");
 	scanf("%d", &m);//input number of columns here
 	
 	a = (int**)malloc(n*sizeof(int*));//assignment of memory for pointers to lines
@@ -29,7 +29,7 @@ main() {
 	}
 	
 	//output of unsorted array
-	printf("Изначальный массив:\n");
+	printf("РР·РЅР°С‡Р°Р»СЊРЅС‹Р№ РјР°СЃСЃРёРІ:\n");
 	for (int i = 0; i < n ; i++) {
 		for (int j = 0; j < m; j++) {
 			printf("%4d", a[i][j]);
@@ -102,12 +102,11 @@ main() {
 	}
 	
 	//output of sorted array
-	printf("Отсортированный массив:\n");
+	printf("РћС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅС‹Р№ РјР°СЃСЃРёРІ:\n");
 	for (int i = 0; i < n ; i++) {
 		for (int j = 0; j < m; j++) {
 			printf("%4d", a[i][j]);
 		}
 		printf("\n");
 	}
-	
 }
